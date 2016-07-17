@@ -55,9 +55,14 @@ namespace PathFinder._2D
         }
         public void draw(SpriteBatch spritebatch)
         {
-            
-            rectangle = new Rectangle(locationX, locationY, 32, 32);
-            spritebatch.Draw(texture, rectangle, Color.White);
+
+            //rectangle = new Rectangle(locationX, locationY, 32, 32);
+            //spritebatch.Draw(texture, rectangle, Color.White);
+            spritebatch.Draw(texture, new Vector2(locationX, locationY), null, Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 0);
+        }
+        public void draw(SpriteBatch spritebatch, float rotation)
+        {
+            spritebatch.Draw(texture, new Vector2(locationX, locationY), null, Color.White, rotation, new Vector2(0, 0), 1f, SpriteEffects.None, 0);
         }
     }
 }

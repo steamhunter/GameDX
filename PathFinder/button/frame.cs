@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 /*using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;*/
+using PathFinder._2D;
+using SharpDX.Toolkit;
+using SharpDX.Direct3D11;
 
 namespace PathFinder.Button
 {
@@ -33,8 +36,20 @@ namespace PathFinder.Button
          Vector2 pos;
          Vector2 size;
          Rectangle buttonRec;
+        private Game _game;
+         public Game game
+        {
+            get
+            {
+                return _game;
+            }
+            set
+            {
+                _game = value;
+            }
+        }
          //ButtonState prevstate = ButtonState.Released;
-         protected Texture2D texture;
+         protected SharpDX.Toolkit.Graphics.Texture2D texture;
          bool ready = false;
          public bool clicked = false;
          //public bool clickdone = false;
@@ -67,6 +82,10 @@ namespace PathFinder.Button
              ready = true;
              managment.registerButton(this);
          }
+        public void draw(SpriteBatch spritebatch/*,Device device*/)
+        {
+            spritebatch.Draw(Unit2D.getTexture("grass",game) /*ShaderResourceView.FromFile(device, "accel_world_007.jpg")*/, pos,Color.Beige);
+        }
 
     }
 }
