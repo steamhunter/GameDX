@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharpDX.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,12 @@ namespace PathFinder.Error
             // Application.Exit();
 
         }
-
+        public static Game game;
+        
+        public static void shutgame()
+        {
+            game.Exit();
+        }
         public static string basicError(int eid)
         {
             Console.WriteLine("hopá valami baj van" + eid + "hiba");

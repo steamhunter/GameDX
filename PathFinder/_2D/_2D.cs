@@ -1,4 +1,5 @@
 ﻿using SharpDX;
+
 using SharpDX.Toolkit;
 using SharpDX.Toolkit.Graphics;
 using System;
@@ -15,6 +16,10 @@ namespace PathFinder._2D
         public Rectangle rectangle;
         public int locationX;
         public int locationY;
+        public static SharpDX.Direct3D11.ShaderResourceView getTexture(int appid, Game game)
+        {
+            return Steam.steamicoprocessor.getGameIco(vars.device, Steam.steam.Gameicourl.First(x => x.gameid == appid).iconurl);
+        }
         public static Texture2D getTexture(string entity, Game game)
         {
 
@@ -36,17 +41,17 @@ namespace PathFinder._2D
             
 
         }
-        public bool isColided(Unit2D player, Unit2D enemy)
-        {
+        //public bool isColided(Unit2D player, Unit2D enemy)
+        //{
 
-            if (player.rectangle.Intersects(enemy.rectangle))
-            {
-                return true;
-            }
-            else return false;
+        //    if (player.rectangle.Intersects(enemy.rectangle))
+        //    {
+        //        return true;
+        //    }
+        //    else return false;
 
 
-        }
+        //}
         public void update()
         {
 
@@ -55,9 +60,13 @@ namespace PathFinder._2D
         }
         public void draw(SpriteBatch spritebatch)
         {
-            
-            rectangle = new Rectangle(locationX, locationY, 32, 32);
-            spritebatch.Draw(texture, rectangle, Color.White);
+
+           
+            spritebatch.Draw(texture, new Vector2(locationX, locationY), null, Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 0);
+        }
+        public void draw(SpriteBatch spritebatch, float rotation)
+        {
+            spritebatch.Draw(texture, new Vector2(locationX, locationY), null, Color.White, rotation, new Vector2(0, 0), 1f, SpriteEffects.None, 0);
         }
     }
 }

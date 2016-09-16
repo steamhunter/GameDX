@@ -8,22 +8,21 @@ namespace PathFinder.Character.Managment
 {
     public class management
     {
-        static Base[] array = new Base[100];
-        static int db = 0;
+        static List<Base> list = new List<Base>();
         public static void register(Base charact)
         {
-            array[db] = charact;
-            db++;
+            list.Add( charact);
         }
         public static void colision(Unit2D player)
         {
-            for (int i = 0; i < db; i++)
+            foreach (var item in list)
             {
-                if (array[i].unit.rectangle.Intersects(player.rectangle))
+                if (item.unit.rectangle.Intersects(player.rectangle) )
                 {
-                    array[i].ifcolide(1);
+                    item.ifcolide(1);
                 }
             }
+           
         }
     }
 

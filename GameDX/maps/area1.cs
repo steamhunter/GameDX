@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Graphics;*/
 
 namespace GameDX.maps
 {
+    /*asd*/
     class area1:AreaBase
     {
         static harcos e1;
