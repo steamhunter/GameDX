@@ -7,6 +7,7 @@ using SharpDX.Toolkit;
 using SharpDX.Toolkit.Graphics;
 using SharpDX;
 using PathFinder;
+using SharpDX.Direct3D11;
 
 namespace PathFinder
 {
@@ -20,8 +21,11 @@ namespace PathFinder
         battle
 
     }
+   
     public class vars
     {
         public static gamestate state = gamestate.world;
+        public static SpriteBatch spriteBatch;
+        public static Device device;
     }
 }
