@@ -8,31 +8,24 @@ namespace PathFinder
 {
     public class FightHandler
     {
-            public static CharacterEnemyBase[] enemylist = new CharacterEnemyBase[8];
+            //public static CharacterEnemyBase[] enemylist = new CharacterEnemyBase[8];
+        public static List<CharacterEnemyBase> enemyList = new List<CharacterEnemyBase>();
             static int usedSlots = 0; 
-        public static int addEnemy(CharacterEnemyBase enemy)
+        public static void addEnemy(CharacterEnemyBase enemy)
         {
-            if (usedSlots!=7)
-            {
-                enemylist[usedSlots] = enemy;
-                usedSlots++;
-                return usedSlots--;
-            }
-            else
-            {
-                
-                Console.WriteLine("regisztrációs hiba a FightHandlerben");
-                return -1;
-            }
+            
+                enemyList.Add( enemy);
+            
             
         }
         public static void endFight()
         {
+           
             for (int i = 0; i < usedSlots; i++)
             {
-                enemylist[i].isdead = true;
+                enemyList[i].isdead = true;
             }
-            enemylist = new CharacterEnemyBase[8];
+            enemyList = new List<CharacterEnemyBase>();
             vars.state = gamestate.world;
 
         }
