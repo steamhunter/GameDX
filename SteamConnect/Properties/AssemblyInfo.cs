@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("steam")]
+[assembly: AssemblyTitle("SteamConnect")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("steam")]
+[assembly: AssemblyProduct("SteamConnect")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("abe2c0a6-c392-4ffe-81fc-2818afa68c87")]
+[assembly: Guid("5ffd2772-47a0-49f3-8d4a-ab3419bb8c97")]
 
 // Version information for an assembly consists of the following four values:
 //
