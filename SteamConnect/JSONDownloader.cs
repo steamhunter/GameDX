@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 
-namespace Steam.libs
+namespace SteamConnect
 {
-    public class jsondownloader
+    public class JSONDownloader
     {
         public class jsonrespond
         {
